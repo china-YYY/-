@@ -1,9 +1,7 @@
 package com.iwuhu.service;
 
-import com.iwuhu.dto.Student;
+import com.iwuhu.dto.StudentDto;
 import com.iwuhu.exception.Response;
-
-import java.util.List;
 
 /**
  * @Auther: Yuxilai
@@ -26,7 +24,7 @@ public interface StudentService {
     *@return: 无
     *@auther: Yuxilai
     */
-    Response addStudent(Student student);
+    Response addStudent(StudentDto studentDto);
 
 
 

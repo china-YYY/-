@@ -1,6 +1,6 @@
 package com.iwuhu.controller;
 
-import com.iwuhu.dto.Student;
+import com.iwuhu.dto.StudentDto;
 import com.iwuhu.exception.Response;
 import com.iwuhu.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * @Auther: Yuxilai
@@ -32,8 +31,8 @@ public class StudentController {
 
     //添加一个学生
     @RequestMapping("/insert")
-    public Response insertStudent (@Valid Student student){
-        return studentService.addStudent(student);
+    public Response insertStudent (@Valid StudentDto studentDto){
+        return studentService.addStudent(studentDto);
     }
 
 

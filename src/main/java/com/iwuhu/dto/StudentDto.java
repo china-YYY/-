@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  * @Version: 1.0
  */
 @Data
-public class Student {
+public class StudentDto {
     @NotNull(message = "姓名不能为空")
     private String name;
     @Max(value = 200,message = "输入的年龄太大了")

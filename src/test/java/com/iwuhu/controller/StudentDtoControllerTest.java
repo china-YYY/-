@@ -1,8 +1,6 @@
 package com.iwuhu.controller;
 
 import com.iwuhu.MyApplicaiton;
-import com.iwuhu.exception.Response;
-import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,11 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * @Auther: Yuxilai
@@ -31,7 +24,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MyApplicaiton.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class StudentControllerTest {
+public class StudentDtoControllerTest {
     @LocalServerPort
     private int port;
 
@@ -79,13 +72,12 @@ public class StudentControllerTest {
         HttpEntity entity = new HttpEntity(headers);
 
         //ResponseEntity封装了返回的数据，包括request，body，header等
-        ResponseEntity<String> jsonObject =
-                this.restTemplate.exchange(this.base.toString() + "student/list", HttpMethod.GET, entity, String.class);
+        ResponseEntity<Object> jsonObject =
+                this.restTemplate.exchange(this.base.toString() + "student/list", HttpMethod.GET, entity, Object.class);
 
         // System.out.println(this.base.toString() + " ------------------------>>");
         //打印请求的获取到的数据
         System.out.println(jsonObject.getBody());
-
     }
 
     @Test
