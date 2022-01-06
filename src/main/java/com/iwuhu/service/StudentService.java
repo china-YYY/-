@@ -1,7 +1,7 @@
 package com.iwuhu.service;
 
 import com.iwuhu.dto.StudentDto;
-import com.iwuhu.exception.Response;
+import com.iwuhu.commons.Response;
 
 /**
  * @Auther: Yuxilai

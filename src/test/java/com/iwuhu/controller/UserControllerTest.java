@@ -2,7 +2,10 @@ package com.iwuhu.controller;
 
 import com.iwuhu.MyApplicaiton;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +25,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MyApplicaiton.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
 public class UserControllerTest extends TestCase {
 
     @LocalServerPort
@@ -46,4 +48,15 @@ public class UserControllerTest extends TestCase {
                 this.base.toString() + "/user/list", List.class, "");
         System.out.println(String.format("测试结果为：%s", response.getBody()));
     }
+
+    /*@Test
+    public void testGetUser() {
+        Map<String,Object> map = new HashMap<>();
+        map.put("accessToken","");
+
+        restTemplate.headForHeaders(this.base.toString() + "/get/user",map);
+        ResponseEntity<List> response = this.restTemplate.getForEntity(
+                this.base.toString() + "/user/list", List.class, "");
+        System.out.println(String.format("测试结果为：%s", response.getBody()));
+    }*/
 }

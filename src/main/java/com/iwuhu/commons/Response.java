@@ -1,13 +1,12 @@
-package com.iwuhu.exception;
+package com.iwuhu.commons;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 /**
  * @Auther: Yuxilai
  * @Date: 2022/1/6 - 9:57
- * @Description: com.iwuhu.exception
+ * @Description: com.iwuhu.commons
  * @Version: 1.0
  */
 // @Component

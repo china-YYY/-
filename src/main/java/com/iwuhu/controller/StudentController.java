@@ -1,7 +1,7 @@
 package com.iwuhu.controller;
 
 import com.iwuhu.dto.StudentDto;
-import com.iwuhu.exception.Response;
+import com.iwuhu.commons.Response;
 import com.iwuhu.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

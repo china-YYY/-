@@ -1,7 +1,7 @@
 package com.iwuhu.service.impl;
 
 import com.iwuhu.dto.StudentDto;
-import com.iwuhu.exception.Response;
+import com.iwuhu.commons.Response;
 import com.iwuhu.service.StudentService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
