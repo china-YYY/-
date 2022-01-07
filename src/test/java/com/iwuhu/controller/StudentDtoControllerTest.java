@@ -1,6 +1,7 @@
 package com.iwuhu.controller;
 
 import com.iwuhu.MyApplicaiton;
+import com.iwuhu.commons.Response;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +14,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import java.net.URL;
 
@@ -82,5 +85,26 @@ public class StudentDtoControllerTest {
 
     @Test
     public void insertStudent() {
+        //声明一个header变量
+        HttpHeaders headers = new HttpHeaders();
+        //设置Token和SsoId
+        headers.set("accessToken","dfsafdsafasfds");
+        headers.set("ssoId","T92834");
+
+        MultiValueMap<String,String> requestBody = new LinkedMultiValueMap<>();
+        requestBody.add("name","1");
+        requestBody.add("age","1");
+
+        //创建请求的header实体
+        HttpEntity entity = new HttpEntity(requestBody,headers);
+
+
+        //ResponseEntity封装了返回的数据，包括request，body，header等
+        ResponseEntity<String> exchange = this.restTemplate
+                .exchange(this.base.toString() + "student/insert", HttpMethod.POST, entity, String.class);
+
+        //打印请求的获取到的数据
+        System.out.println(exchange.getBody());
+
     }
 }
