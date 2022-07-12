@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 /**
@@ -20,7 +21,8 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-
+    @Autowired
+    private HttpServletRequest httpServletRequest;
     @Autowired
     private StudentService studentService;
     @Autowired
@@ -29,7 +31,12 @@ public class StudentController {
     //查询所有学生
     @GetMapping("/list")
     public Response studentList(){
-        pushDingService.pushDing();
+        // pushDingService.pushDing();
+
+        String abc = httpServletRequest.getHeader("abc");
+        System.out.println(abc);
+        System.out.println("test");
+
         return studentService.list();
     }
 

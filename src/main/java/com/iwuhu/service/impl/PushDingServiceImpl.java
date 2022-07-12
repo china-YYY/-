@@ -38,13 +38,8 @@ import java.util.Map;
 @Service
 @Slf4j
 public class PushDingServiceImpl implements PushDingService {
-    //申哥不在
-    private String workHook1 = "https://oapi.dingtalk.com/robot/send?access_token=55f97439eb5beaae213ef49d70834c0225382dbd3686075cb142c1b560317b9f";
-    private String signOne1 = "SEC43027a962115195be542a4be6c2d3fb08acd21573435728338b828578301089d";
-
-    //申哥在
-    private String workHook = "https://oapi.dingtalk.com/robot/send?access_token=98df584141dc0f8b909973ec753792e5dad68c0af81e36d2fe93d6ebe5516e27";
-    private String signOne = "SEC58e002789450b5bc48c3b1a01a58cc838980389b81ccfdb3cdf31c90bfff0642";
+    private String signOne = "秘钥地址";
+    private String workHook = "机器人的url";
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
